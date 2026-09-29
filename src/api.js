@@ -16,7 +16,7 @@ export async function api(path, { method = 'GET', body, params } = {}) {
     headers: { 'Content-Type': 'application/json', ...(u ? { Authorization: 'Bearer ' + u.token } : {}) },
     body: body ? JSON.stringify(body) : undefined,
   })
-  if (res.status === 401 && path !== '/api/auth/login') { session.clear(); location.reload() }
+  if (res.status === 401 && path !== '/api/auth/login' && u) { session.clear(); location.reload() }
   const text = await res.text()
   let data = null
   try { data = text ? JSON.parse(text) : null } catch { data = text }
