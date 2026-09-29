@@ -1,0 +1,44 @@
+﻿* { box-sizing: border-box }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f2f4f1; color: #1d2b1f }
+h2 { margin: 0 0 12px }
+.muted { color: #6b7a6d; font-size: .9rem }
+.card { background: #fff; border-radius: 10px; padding: 16px; box-shadow: 0 1px 4px #0002; margin-bottom: 16px }
+.center { min-height: 100vh; display: grid; place-items: center }
+.login { width: 340px; display: grid; gap: 10px }
+.login h1 { margin: 0; color: #3b4d34 }
+input, select { width: 100%; padding: 9px; border: 1px solid #c5cdc3; border-radius: 6px; font: inherit }
+button { background: #3b4d34; color: #fff; border: 0; padding: 10px 16px; border-radius: 6px; cursor: pointer; font: inherit }
+button:hover { background: #4d6544 }
+button.ghost { background: transparent; border: 1px solid #fff8 }
+label { display: grid; gap: 4px; font-size: .85rem; color: #4b5a4d }
+.error { background: #fde8e8; color: #9b1c1c; padding: 10px; border-radius: 6px; margin-bottom: 12px }
+.ok { background: #e3f4e5; color: #1e6b2b; padding: 10px; border-radius: 6px; margin-bottom: 12px }
+header { display: flex; align-items: center; gap: 12px; background: #3b4d34; color: #fff; padding: 10px 16px }
+.who { margin-left: auto; font-size: .85rem }
+.burger { display: none; background: transparent; font-size: 1.3rem; padding: 0 8px }
+.body { display: flex; min-height: calc(100vh - 52px) }
+nav { width: 190px; background: #fff; padding: 12px 0; border-right: 1px solid #dde3db }
+nav a { display: block; padding: 11px 20px; cursor: pointer; transition: background .2s }
+nav a:hover { background: #eef2ec }
+nav a.active { background: #dfe8db; font-weight: 600; border-left: 4px solid #3b4d34 }
+main { flex: 1; padding: 20px; min-width: 0; animation: fade .3s }
+@keyframes fade { from { opacity: 0; transform: translateY(6px) } to { opacity: 1 } }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px }
+.stat { display: grid; gap: 4px; margin: 0 }
+.stat strong { font-size: 2rem }
+.stat.click { cursor: pointer; border: 2px solid #3b4d34; transition: transform .15s }
+.stat.click:hover { transform: translateY(-2px) }
+.filters, .formrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; align-items: end; margin-bottom: 16px }
+.scroll { overflow-x: auto }
+table { border-collapse: collapse; width: 100%; font-size: .9rem }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6ebe4; white-space: nowrap }
+th { background: #f2f4f1 }
+.overlay { position: fixed; inset: 0; background: #0007; display: grid; place-items: center; padding: 16px; animation: fade .2s }
+.modal { max-width: 800px; width: 100%; max-height: 88vh; overflow: auto }
+@media (max-width: 720px) {
+  .burger { display: block }
+  nav { position: fixed; top: 52px; bottom: 0; left: -210px; transition: left .25s; z-index: 5 }
+  nav.open { left: 0 }
+  .who { display: none }
+  header b { margin-right: auto }
+}
